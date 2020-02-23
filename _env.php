@@ -14,9 +14,9 @@
     define("REAL_DOC_ROOT", DIR_ROOT.PRO_DIR);
     
     //database config
-    define("DB_HOST", "localhost"); //needs to set according to your environment
-    define("DB_NAME", "fabelio_link_collector"); //needs to set according to your environment
-    define("DB_USERNAME", "root"); //needs to set according to your environment
-    define("DB_PASSWORD", ""); //needs to set according to your environment
+    define("DB_HOST", "ec2-54-197-34-207.compute-1.amazonaws.com"); //needs to set according to your environment
+    define("DB_NAME", "d1a7jomefl9as0"); //needs to set according to your environment
+    define("DB_USERNAME", "glnhdeyxszvvxe"); //needs to set according to your environment
+    define("DB_PASSWORD", "54b4e6131309739db2627e463269eb726927f8b3df3ab84c3e1b66f1f175a255"); //needs to set according to your environment
     include_once REAL_DOC_ROOT.'/config/database.php';
 ?>
