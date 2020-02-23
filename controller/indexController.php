@@ -50,7 +50,7 @@
             }
             if(empty($errors)){
                 // Insert user data into table
-                $query = mysqli_query(
+                $query = pg_query(
                     $connection, 
                     "
                         INSERT INTO 
@@ -75,11 +75,14 @@
                                 '$json',
                                 '$created_by'
                             )
+                        RETURNING currval('links_id'::regclass)
                     "
                 );
             }  
         } 
 
+        //die(print_r(pg_fetch_array($query)));
+       
         //confirmation
         if(!empty($errors)){
             $data['success'] = false; 
@@ -87,11 +90,11 @@
         }else{
             if(!$query){
                 $data['success'] = false; 
-                $data['message'] = mysqli_error($connection);
+                $data['message'] = $query;
             }else{
                 $data['success'] = true; 
                 $data['message'] = "Link was successful added";
-                $data['id'] = mysqli_insert_id($connection);
+                $data['id'] = pg_fetch_array($query)['currval'];
             }  
         }
     }

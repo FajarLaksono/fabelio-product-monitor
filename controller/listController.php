@@ -1,5 +1,5 @@
 <?php 
-    $get_data = mysqli_query(
+    $get_data = pg_query(
         $connection,
         "
             SELECT      * 
@@ -8,7 +8,7 @@
         "
     );
 
-    while($r = mysqli_fetch_array($get_data)){
+    while($r = pg_fetch_array($get_data)){
         $data[] = $r; 
     }
 ?>
